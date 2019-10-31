@@ -55,6 +55,7 @@ button {
   width: 35%;
   margin-left: 32%;
   padding: 10px;
+  background-color: white;
 }
 input[type="text"] {
   font-size: 25px;
