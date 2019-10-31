@@ -2,7 +2,7 @@ var theImage = document.getElementById("myimage");
 var submit = document.getElementById("submit");
 let rightAnswer;
 let score = 0;
-// flasecounter is used for the wrong hits
+// falsecounter is used for the wrong hits
 let falseCounter = 0;
 function setRandomFlag() {
   var imgDir = "./images/";
@@ -121,7 +121,6 @@ function test(event) {
     correctAnswer = rightAnswer && rightAnswer.slice(0, -4);
     input.value = "";
   } else {
-    feedback.setAttribute("id", "text");
     falseCounter += 1;
     feedback.style.color = "#600000";
     feedback.innerHTML = "Wrong";
@@ -144,6 +143,7 @@ function test(event) {
   }
   if (score <= 0) {
     feedback.innerHTML = `Sorry!!! You Lost it, Better Luck next time... Click on game over to Start Again`;
+    feedback.setAttribute("id", "text");
     feedback.style.color = "black";
     const imageOver = document.getElementById("game");
     imageOver.src = "./images/game.gif";
@@ -157,8 +157,9 @@ function test(event) {
     submit.parentNode.removeChild(submit);
   }
 
-  if (score <= 30) {
+  if (score === 40 && score <= 40) {
     feedback.innerHTML = `Continue Playing!!!`;
+    feedback.setAttribute("id", "text");
     feedback.style.color = "black";
     const imageContinue = document.getElementById("playing");
     imageContinue.src = "./images/playing.gif";
@@ -168,8 +169,9 @@ function test(event) {
     const imageContinue = document.getElementById("playing");
     imageContinue.setAttribute("style", "visibility: hidden");
   }
-  if (score >= 100) {
+  if (score >= 120) {
     feedback.innerHTML = `Your Total Score ${score} `;
+    feedback.setAttribute("id", "text");
     feedback.style.color = "black";
     const imageParty = document.getElementById("picture");
     imageParty.src = "./images/minion.gif";
@@ -177,7 +179,6 @@ function test(event) {
     imageParty.onclick = function() {
       window.location.reload();
     };
-
     theImage.parentNode.removeChild(theImage);
     input.parentNode.removeChild(input);
     submit.parentNode.removeChild(submit);
