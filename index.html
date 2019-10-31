@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Fun with Flags!!!</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <h1 id="score">Score: 0</h1>
+
+    <img src="./images/loogo_game_of_flags_v2.png" class="logo" />
+
+    <img id="myimage" alt="flag image" />
+
+    <img id="picture" alt="scored image" />
+
+    <img id="playing" alt=" continue playing image" />
+
+    <img id="game" alt="game over image" />
+
+    <form onsubmit="test(event)">
+      <div>
+        <input id="type" type="text" size="20" />
+      </div>
+    </form>
+
+    <center>
+      <br />
+      <button id="submit" onclick="test(event)" type="submit">Go!</button>
+    </center>
+    <p class="pretag"></p>
+
+    <script src="flag.js"></script>
+  </body>
+</html>
